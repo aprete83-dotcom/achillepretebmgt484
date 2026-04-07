@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chipotle Landing Page</title>
-  <meta name="description" content="Fresh, healthy, customizable meals ready in minutes." />
+  <meta name="description" content="Healthy, affordable, customizable meals ready in minutes." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
@@ -20,8 +20,10 @@
       --shadow: 0 18px 45px rgba(0,0,0,.12);
       --radius: 28px;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, system-ui, sans-serif;
@@ -29,135 +31,484 @@
       background: var(--chipotle-cream);
       line-height: 1.5;
     }
+
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
-    .display { font-family: Outfit, Inter, sans-serif; }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .display {
+      font-family: Outfit, Inter, sans-serif;
+    }
+
     .topbar {
-      position: sticky; top: 0; z-index: 20;
+      position: sticky;
+      top: 0;
+      z-index: 20;
       background: rgba(255,255,255,.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
+
     .topbar-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      min-height: 72px; gap: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 16px;
     }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .02em; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
     .brand-dot {
-      width: 34px; height: 34px; border-radius: 999px;
-      background: var(--chipotle-red); color: white;
-      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--chipotle-red);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       font-size: 16px;
     }
+
     .pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 9px 14px; border-radius: 999px; font-size: 14px;
-      font-weight: 700; background: #fff1f0; color: var(--chipotle-red);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      background: #fff1f0;
+      color: var(--chipotle-red);
       white-space: nowrap;
     }
+
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      border: 0; cursor: pointer; text-decoration: none;
-      padding: 16px 26px; border-radius: 18px; font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 16px 26px;
+      border-radius: 18px;
+      font-weight: 800;
       transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
     }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--chipotle-red); color: #fff; box-shadow: 0 14px 30px rgba(168,22,18,.22); }
-    .btn-primary:hover { background: #8d110f; }
-    .btn-secondary { background: #fff; color: var(--chipotle-dark); border: 2px solid rgba(69,20,0,.1); }
-    .hero { padding: 64px 0 72px; }
-    .hero-grid {
-      display: grid; grid-template-columns: 1.08fr .92fr; gap: 48px; align-items: center;
+
+    .btn:hover {
+      transform: translateY(-1px);
     }
-    h1, h2, h3, h4 { margin: 0; color: var(--chipotle-dark); }
+
+    .btn-primary {
+      background: var(--chipotle-red);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(168,22,18,.22);
+    }
+
+    .btn-primary:hover {
+      background: #8d110f;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--chipotle-dark);
+      border: 2px solid rgba(69,20,0,.1);
+    }
+
+    .hero {
+      padding: 64px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      color: var(--chipotle-dark);
+    }
+
     h1 {
       font-size: clamp(42px, 6vw, 78px);
-      line-height: 1.05; margin-bottom: 18px;
+      line-height: 1.05;
+      margin-bottom: 18px;
     }
-    .hero h1 span, .accent { color: var(--chipotle-red); }
-    .lead { font-size: 22px; color: #4b5563; max-width: 640px; margin-bottom: 26px; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 14px; }
-    .urgency-line { display: flex; align-items: center; gap: 8px; color: var(--chipotle-red); font-weight: 800; margin-bottom: 24px; }
-    .social-proof { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; }
-    .stars { color: #f5b301; letter-spacing: 2px; }
+
+    .hero h1 span,
+    .accent {
+      color: var(--chipotle-red);
+    }
+
+    .lead {
+      font-size: 22px;
+      color: #4b5563;
+      max-width: 640px;
+      margin-bottom: 18px;
+    }
+
+    .value-line {
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .reorder-line {
+      font-weight: 700;
+      color: var(--chipotle-dark);
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+
+    .urgency-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--chipotle-red);
+      font-weight: 800;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .social-proof {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+
+    .stars {
+      color: #f5b301;
+      letter-spacing: 2px;
+    }
+
     .hero-card {
-      position: relative; border-radius: 38px; overflow: hidden; box-shadow: var(--shadow);
-      min-height: 520px; background: #ddd;
+      position: relative;
+      border-radius: 38px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 520px;
+      background: #ddd;
     }
-    .hero-card img { width: 100%; height: 100%; object-fit: cover; }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .hero-card::after {
-      content: ""; position: absolute; inset: 0;
+      content: "";
+      position: absolute;
+      inset: 0;
       background: linear-gradient(to top, rgba(69,20,0,.28), rgba(69,20,0,0));
     }
-    .section { padding: 84px 0; }
-    .section-white { background: #fff; }
-    .section-dark { background: var(--chipotle-dark); color: white; }
-    .section-dark h2, .section-dark h3, .section-dark h4 { color: white; }
-    .section-red { background: var(--chipotle-red); color: white; text-align: center; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .card { background: #fff; border-radius: var(--radius); padding: 30px; border: 1px solid var(--border); }
-    .benefit { text-align: center; }
+
+    .section {
+      padding: 84px 0;
+    }
+
+    .section-white {
+      background: #fff;
+    }
+
+    .section-dark {
+      background: var(--chipotle-dark);
+      color: white;
+    }
+
+    .section-dark h2,
+    .section-dark h3,
+    .section-dark h4 {
+      color: white;
+    }
+
+    .section-red {
+      background: var(--chipotle-red);
+      color: white;
+      text-align: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .benefit {
+      text-align: center;
+    }
+
     .iconbox {
-      width: 80px; height: 80px; border-radius: 24px; background: var(--chipotle-cream);
-      display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 32px;
+      width: 80px;
+      height: 80px;
+      border-radius: 24px;
+      background: var(--chipotle-cream);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 32px;
     }
-    .benefit h3 { font-size: 28px; margin-bottom: 12px; }
-    .benefit p, .muted { color: #6b7280; }
-    .two-col { display: grid; grid-template-columns: .96fr 1.04fr; gap: 54px; align-items: center; }
-    .rounded-img { border-radius: 32px; box-shadow: var(--shadow); }
-    .compare { display: flex; gap: 18px; margin-bottom: 28px; }
+
+    .benefit h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .benefit p,
+    .muted {
+      color: #6b7280;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: .96fr 1.04fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .rounded-img {
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .compare {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
     .compare-badge {
-      width: 48px; height: 48px; border-radius: 999px; flex: 0 0 auto;
-      display: inline-flex; align-items: center; justify-content: center; font-weight: 800;
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
     }
-    .bad-red { background: rgba(239,68,68,.12); color: #f87171; border: 1px solid rgba(239,68,68,.2); }
-    .bad-green { background: rgba(34,197,94,.12); color: #4ade80; border: 1px solid rgba(34,197,94,.2); }
+
+    .bad-red {
+      background: rgba(239,68,68,.12);
+      color: #f87171;
+      border: 1px solid rgba(239,68,68,.2);
+    }
+
+    .bad-green {
+      background: rgba(34,197,94,.12);
+      color: #4ade80;
+      border: 1px solid rgba(34,197,94,.2);
+    }
+
     .eyebrow {
-      display: inline-block; padding: 8px 14px; border-radius: 999px;
-      background: rgba(255,255,255,.18); font-size: 13px; letter-spacing: .14em; font-weight: 800;
-      text-transform: uppercase; margin-bottom: 18px;
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.18);
+      font-size: 13px;
+      letter-spacing: .14em;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
-    .countdown-big { font-family: Outfit, Inter, sans-serif; font-size: clamp(62px, 12vw, 126px); font-weight: 800; line-height: 1; margin: 12px 0 18px; }
-    .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .review { background: var(--chipotle-cream); border: 1px solid var(--border); border-radius: 30px; padding: 28px; }
-    .review p { font-size: 20px; color: var(--chipotle-dark); font-weight: 600; }
-    .reviewer { display: flex; align-items: center; gap: 12px; margin-top: 18px; font-weight: 700; }
+
+    .countdown-big {
+      font-family: Outfit, Inter, sans-serif;
+      font-size: clamp(62px, 12vw, 126px);
+      font-weight: 800;
+      line-height: 1;
+      margin: 12px 0 18px;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review {
+      background: var(--chipotle-cream);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 28px;
+    }
+
+    .review p {
+      font-size: 20px;
+      color: var(--chipotle-dark);
+      font-weight: 600;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
     .avatar {
-      width: 42px; height: 42px; border-radius: 999px; background: rgba(69,20,0,.1);
-      color: var(--chipotle-dark); display: inline-flex; align-items: center; justify-content: center; font-weight: 800;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: rgba(69,20,0,.1);
+      color: var(--chipotle-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
     }
+
     .reassurance {
-      margin-top: 34px; background: #ecfdf3; border: 1px solid #cfe9d6; border-radius: 30px;
-      padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      margin-top: 34px;
+      background: #ecfdf3;
+      border: 1px solid #cfe9d6;
+      border-radius: 30px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
     }
-    .reassurance h4 { color: #14532d; margin-bottom: 4px; }
-    .reassurance p, .reassurance .score { color: #166534; font-weight: 600; }
-    .final-cta { text-align: center; position: relative; overflow: hidden; }
+
+    .reassurance h4 {
+      color: #14532d;
+      margin-bottom: 4px;
+    }
+
+    .reassurance p,
+    .reassurance .score {
+      color: #166534;
+      font-weight: 600;
+    }
+
+    .final-cta {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
     .final-cta::before {
-      content: ""; position: absolute; width: 780px; height: 780px; left: 50%; top: 50%; transform: translate(-50%, -50%);
-      background: rgba(255,255,255,.8); filter: blur(90px); border-radius: 999px; z-index: 0;
+      content: "";
+      position: absolute;
+      width: 780px;
+      height: 780px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,.8);
+      filter: blur(90px);
+      border-radius: 999px;
+      z-index: 0;
     }
-    .final-cta > * { position: relative; z-index: 1; }
+
+    .final-cta > * {
+      position: relative;
+      z-index: 1;
+    }
+
     footer {
-      background: #fff; border-top: 1px solid var(--border); padding: 26px 0 40px;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 26px 0 40px;
     }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
-    .footer-links { display: flex; gap: 20px; color: var(--muted); font-weight: 600; }
-    .footer-copy { color: #9ca3af; font-size: 14px; }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .footer-copy {
+      color: #9ca3af;
+      font-size: 14px;
+    }
 
     @media (max-width: 980px) {
-      .hero-grid, .grid-3, .two-col, .reviews { grid-template-columns: 1fr; }
-      .hero { padding-top: 34px; }
-      .hero-card { min-height: 420px; }
-      .topbar-inner { flex-wrap: wrap; padding: 12px 0; }
-      .reassurance, .footer-inner { flex-direction: column; align-items: flex-start; }
+      .hero-grid,
+      .grid-3,
+      .two-col,
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-card {
+        min-height: 420px;
+      }
+
+      .topbar-inner {
+        flex-wrap: wrap;
+        padding: 12px 0;
+      }
+
+      .reassurance,
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
+
     @media (max-width: 640px) {
-      .lead { font-size: 18px; }
-      .btn { width: 100%; }
-      .cta-row { flex-direction: column; }
-      .pill { font-size: 13px; }
+      .lead {
+        font-size: 18px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .cta-row {
+        flex-direction: column;
+      }
+
+      .pill {
+        font-size: 13px;
+      }
+
+      .value-line,
+      .reorder-line {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -166,8 +517,8 @@
     <div class="container topbar-inner">
       <div class="brand display"><span class="brand-dot">🌯</span> CHIPOTLE</div>
       <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <div class="pill">⏱️ <span id="timer-top">10:00</span> left for discount</div>
-        <a class="btn btn-primary" href="#order">Order Now</a>
+        <div class="pill">⏱️ <span id="timer-top">10:00</span> left for 10% off</div>
+        <a class="btn btn-primary" href="#order">Build Your Bowl</a>
       </div>
     </div>
   </header>
@@ -176,15 +527,23 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <h1 class="display">Fresh, Healthy, and <span>Ready in Minutes.</span></h1>
-          <p class="lead">Build your perfect bowl with real ingredients. Fast, customizable, and convenient—exactly how lunch should be.</p>
+          <h1 class="display">Healthy, Affordable Meals <span>Ready in Minutes.</span></h1>
+          <p class="lead">Back for a quick, healthy lunch? Build your bowl your way with real ingredients, fast pickup, and easy ordering.</p>
+          <p class="value-line">Healthy meals under $10 — no compromises.</p>
+
           <div class="cta-row">
-            <a class="btn btn-primary" href="#order">Order Now →</a>
-            <a class="btn btn-secondary" href="#order">Quick Reorder ⏰</a>
+            <a class="btn btn-primary" href="#order">Build Your Bowl →</a>
+            <a class="btn btn-secondary" href="#order">Reorder Your Bowl ⚡</a>
           </div>
-          <div class="urgency-line">⚡ Get a discount if you order in the next <span id="timer-inline">10:00</span>!</div>
-          <div class="social-proof"><span class="stars">★★★★★</span><strong style="color:var(--chipotle-dark)">Millions of meals served</strong></div>
+
+          <p class="reorder-line">⚡ Reorder your last bowl in 1 click — no account needed.</p>
+          <div class="urgency-line">🔥 Get 10% off your next order — expires in <span id="timer-inline">10:00</span></div>
+          <div class="social-proof">
+            <span class="stars">★★★★★</span>
+            <strong style="color:var(--chipotle-dark)">Millions of meals served</strong>
+          </div>
         </div>
+
         <div class="hero-card">
           <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&q=80&w=1200" alt="Fresh Chipotle-style burrito bowl with rice, chicken, avocado, and vegetables" referrerpolicy="no-referrer">
         </div>
@@ -198,15 +557,17 @@
           <h3>100% Real Ingredients</h3>
           <p>No artificial flavors or preservatives. Just fresh produce and responsibly raised meat.</p>
         </article>
+
         <article class="benefit">
           <div class="iconbox">⚡</div>
           <h3>Ready in Minutes</h3>
           <p>Order ahead and skip the line. Your meal is prepared fresh and ready when you arrive.</p>
         </article>
+
         <article class="benefit">
           <div class="iconbox">🥗</div>
-          <h3>Fully Customizable</h3>
-          <p>Build it exactly how you want it, with plenty of options to fit your taste and your goals.</p>
+          <h3>Built for Your Lifestyle</h3>
+          <p>High-protein, vegan, low-carb — build it exactly how you want it.</p>
         </article>
       </div>
     </section>
@@ -216,8 +577,10 @@
         <div>
           <img class="rounded-img" src="https://images.unsplash.com/photo-1604467731651-bb20239d8935?auto=format&fit=crop&q=80&w=1000" alt="Fresh grilled steak and vegetables ready for a healthy lunch bowl" referrerpolicy="no-referrer">
         </div>
+
         <div>
           <h2 class="display" style="font-size:clamp(36px,5vw,58px); line-height:1.1; margin-bottom:34px;">Lunch Shouldn't Be a Struggle.</h2>
+
           <div class="compare">
             <div class="compare-badge bad-red">✕</div>
             <div>
@@ -225,14 +588,16 @@
               <div style="color:#d1d5db;">Expensive “healthy” food, long wait times, and complicated apps that make ordering harder than it should be.</div>
             </div>
           </div>
+
           <div class="compare">
             <div class="compare-badge bad-green">✓</div>
             <div>
               <h4 style="color:#4ade80; font-size:24px; margin-bottom:6px;">The Chipotle Way</h4>
-              <div style="color:#e5e7eb;">Simple ordering, ready fast, and no account required. Just real food, really fast.</div>
+              <div style="color:#e5e7eb;">Simple ordering, ready fast, affordable prices, and no account required. Just real food, really fast.</div>
             </div>
           </div>
-          <a class="btn btn-primary" href="#order">Order Now →</a>
+
+          <a class="btn btn-primary" href="#order">Build Your Bowl →</a>
         </div>
       </div>
     </section>
@@ -240,10 +605,10 @@
     <section class="section section-red">
       <div class="container">
         <div class="eyebrow">Limited Time Offer</div>
-        <h2 class="display" style="font-size:clamp(38px,6vw,78px); line-height:1.08; color:white; margin-bottom:8px;">Get a discount if you order in the next 10 minutes.</h2>
+        <h2 class="display" style="font-size:clamp(38px,6vw,78px); line-height:1.08; color:white; margin-bottom:8px;">Get 10% off if you order in the next 10 minutes.</h2>
         <div class="countdown-big" id="timer-big">10:00</div>
-        <p style="font-size:24px; opacity:.92; max-width:760px; margin:0 auto 28px;">Fresh, healthy lunch is just a few clicks away. Don’t wait—this offer is limited.</p>
-        <a class="btn" style="background:white; color:var(--chipotle-red); padding:18px 34px; font-size:28px;" href="#order">Order Now</a>
+        <p style="font-size:24px; opacity:.92; max-width:760px; margin:0 auto 28px;">Fresh, healthy lunch is just a few clicks away. Don’t wait — this lunch deal is limited.</p>
+        <a class="btn" style="background:white; color:var(--chipotle-red); padding:18px 34px; font-size:28px;" href="#order">Build Your Bowl</a>
       </div>
     </section>
 
@@ -251,7 +616,7 @@
       <div class="container">
         <div style="text-align:center; margin-bottom:42px;">
           <h2 class="display" style="font-size:48px; margin-bottom:8px;">Millions of Meals Served.</h2>
-          <p class="muted" style="font-size:22px;">Join the thousands of people choosing real food every day.</p>
+          <p class="muted" style="font-size:22px;">Join millions of people choosing real food every day.</p>
         </div>
 
         <div class="reviews">
@@ -260,11 +625,13 @@
             <p>“The fastest healthy lunch I’ve found. No account needed, just order and go.”</p>
             <div class="reviewer"><span class="avatar">S</span> Sarah J.</div>
           </article>
+
           <article class="review">
             <div class="stars" style="font-size:20px; margin-bottom:14px;">★★★★★</div>
             <p>“Actually fresh ingredients. You can see them prepping the food right there.”</p>
             <div class="reviewer"><span class="avatar">M</span> Marcus T.</div>
           </article>
+
           <article class="review">
             <div class="stars" style="font-size:20px; margin-bottom:14px;">★★★★★</div>
             <p>“The customization is key. I can get exactly what I need for my workout days.”</p>
@@ -284,9 +651,9 @@
 
     <section class="section final-cta" id="order">
       <div class="container">
-        <h2 class="display" style="font-size:clamp(40px,6vw,72px); line-height:1.08; margin-bottom:12px;">Ready for a <span class="accent">Real</span> Lunch?</h2>
-        <div class="urgency-line" style="justify-content:center; font-size:22px; margin-bottom:28px;">⏱️ Discount expires in <span id="timer-final">10:00</span>!</div>
-        <a class="btn btn-primary" style="padding:20px 40px; font-size:28px;" href="#">Order Now</a>
+        <h2 class="display" style="font-size:clamp(40px,6vw,72px); line-height:1.08; margin-bottom:12px;">Ready for a <span class="accent">Healthy, Affordable</span> Lunch?</h2>
+        <div class="urgency-line" style="justify-content:center; font-size:22px; margin-bottom:28px;">⏱️ 10% off expires in <span id="timer-final">10:00</span></div>
+        <a class="btn btn-primary" style="padding:20px 40px; font-size:28px;" href="#">Build Your Bowl Now</a>
         <p class="muted" style="margin-top:18px; font-weight:600;">Join millions of satisfied customers. Freshness guaranteed.</p>
       </div>
     </section>
@@ -308,11 +675,13 @@
     (function () {
       let timeLeft = 600;
       const ids = ['timer-top', 'timer-inline', 'timer-big', 'timer-final'];
+
       const format = (seconds) => {
         const mins = Math.floor(seconds / 60);
         const secs = seconds % 60;
         return mins + ':' + String(secs).padStart(2, '0');
       };
+
       const render = () => {
         const value = format(Math.max(timeLeft, 0));
         ids.forEach(id => {
@@ -320,7 +689,9 @@
           if (el) el.textContent = value;
         });
       };
+
       render();
+
       setInterval(() => {
         if (timeLeft > 0) {
           timeLeft -= 1;
@@ -331,4 +702,3 @@
   </script>
 </body>
 </html>
-
